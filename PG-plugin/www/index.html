@@ -1,0 +1,63 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <title>phoneGap plugin</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <script type="text/javascript" charset="utf-8" src="jquery-1.7.2.min.js"></script>
+        <script type="text/javascript" charset="utf-8" src="cordova-1.7.0.js"></script>
+        <script type="text/javascript" charset="utf-8" src="MyPlugin.js"></script>
+        <script type="text/javascript" charset="utf-8">
+            document.addEventListener("deviceready", onDeviceReady, false);
+            function onDeviceReady() {
+                //回调方法
+                function jscallback(result){
+                    $('#div_result').html(decodeURI(result));
+                }
+                $(function(){
+                  //
+                  $('#btn_sayhello').bind('click',function(e){
+                                          //调用sayHello插件
+                                          Cordova.exec(
+                                                       function(result) {
+                                                       console.log("Success: \r\n"+result);
+                                                       jscallback(result);//
+                                                       },
+                                                       function(error) {
+                                                       console.log("Error: \r\n"+error);
+                                                       },
+                                                       "MyPluginNameInJS",//js引用名称
+                                                       "sayHello",//方法
+                                                       ["HelloWorld"]//参数
+                                                       );
+                                          });
+                  //
+                  $('#btn_showui').bind('click',function(e){
+                                        //调用sayHello插件
+                                        Cordova.exec(
+                                                     function(result) {
+                                                     console.log("Success: \r\n"+result);
+                                                     jscallback(result);//
+                                                     },
+                                                     function(error) {
+                                                     console.log("Error: \r\n"+error);
+                                                     },
+                                                     "MyPluginNameInJS",//js引用名称
+                                                     "showUI",//方法
+                                                     [""]//参数
+                                                     );
+                                        });
+                  });
+            }
+        </script>
+
+    </head>
+    <body>
+        <h3>phoneGap </h3>
+        <hr>
+        <div id="div_result" style='color:red'></div>
+        <div>
+            <input id="btn_sayhello" type="button" value="sayHello"/>
+            <input id="btn_showui" type="button" value="showUI" style='displaynone'/>
+        </div>
+    </body>
+</html>
