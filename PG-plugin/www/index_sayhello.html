@@ -1,0 +1,41 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <title>phoneGap plugin</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <script type="text/javascript" charset="utf-8" src="jquery-1.7.2.min.js"></script>
+        <script type="text/javascript" charset="utf-8" src="cordova-1.7.0.js"></script>
+        <script type="text/javascript" charset="utf-8" src="MyPlugin.js"></script>
+        <script type="text/javascript" charset="utf-8">
+            document.addEventListener("deviceready", onDeviceReady, false);
+            function onDeviceReady() {
+                //回调
+                function jscallback(result){
+                    alert(result);
+                }
+                //
+                $(function(){
+                  //调用sayHello插件
+                  Cordova.exec(
+                               function(result) {
+                               console.log("Success: \r\n"+result);
+                               jscallback(result);//
+                               },
+                               function(error) {
+                               console.log("Error: \r\n"+error);
+                               },
+                               "MyPluginNameInJS",//js引用名称
+                               "sayHello",//方法名称
+                               ["HelloWorld"]//参数
+                               );
+                  });
+            }
+        </script>
+
+    </head>
+    <body>
+        <h3>phoneGap-sayHello </h3>
+        <hr>
+        
+    </body>
+</html>

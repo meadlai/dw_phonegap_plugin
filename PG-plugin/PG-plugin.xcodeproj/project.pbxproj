@@ -40,7 +40,7 @@
 		FF2086921660FE8300996EA5 /* www in Resources */ = {isa = PBXBuildFile; fileRef = FF2086911660FE8300996EA5 /* www */; };
 		FF2086A3166103FB00996EA5 /* MyPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = FF2086A2166103FB00996EA5 /* MyPlugin.m */; };
 		FF2086A61661059800996EA5 /* CustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = FF2086A51661059800996EA5 /* CustomView.m */; };
-		FFC097511661BBA200E19911 /* Cordova.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFC097501661BBA200E19911 /* Cordova.framework */; };
+		FFB06FBB16648A1B005ECBFC /* Cordova.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFB06FBA16648A1B005ECBFC /* Cordova.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,7 +85,7 @@
 		FF2086A2166103FB00996EA5 /* MyPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyPlugin.m; path = Plugins/MyPlugin.m; sourceTree = "<group>"; };
 		FF2086A41661059800996EA5 /* CustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomView.h; path = Plugins/CustomView.h; sourceTree = "<group>"; };
 		FF2086A51661059800996EA5 /* CustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomView.m; path = Plugins/CustomView.m; sourceTree = "<group>"; };
-		FFC097501661BBA200E19911 /* Cordova.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cordova.framework; path = ../../../../Shared/Cordova/Frameworks/Cordova.framework; sourceTree = "<group>"; };
+		FFB06FBA16648A1B005ECBFC /* Cordova.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cordova.framework; path = ../../../../../Shared/Cordova/Frameworks/Cordova.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,7 +106,7 @@
 				FF2086401660FD7400996EA5 /* SystemConfiguration.framework in Frameworks */,
 				FF2086421660FD7400996EA5 /* MobileCoreServices.framework in Frameworks */,
 				FF2086441660FD7400996EA5 /* CoreMedia.framework in Frameworks */,
-				FFC097511661BBA200E19911 /* Cordova.framework in Frameworks */,
+				FFB06FBB16648A1B005ECBFC /* Cordova.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,7 +123,7 @@
 		FF2086191660FD7400996EA5 = {
 			isa = PBXGroup;
 			children = (
-				FFC097501661BBA200E19911 /* Cordova.framework */,
+				FFB06FBA16648A1B005ECBFC /* Cordova.framework */,
 				FF2086911660FE8300996EA5 /* www */,
 				FF2086451660FD7400996EA5 /* PG-plugin */,
 				FF20862A1660FD7400996EA5 /* Frameworks */,

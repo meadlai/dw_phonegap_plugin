@@ -11,7 +11,7 @@
 
 @implementation MyPlugin
 
-@synthesize callbackID, innerAttri;
+@synthesize callbackID;
 
 //
 -(void) sayHello:(NSMutableArray*)arguments withDict:(NSMutableDictionary*)options{
@@ -20,7 +20,7 @@
     NSLog(@"get param: %@",arg);
     NSString *stringToReturn =[NSString stringWithFormat: @"Received message: %@",arg];
     CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK
-                                                      messageAsString: [stringToReturn stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+                                                      messageAsString: stringToReturn];
     //javascript success_callback function
     [self writeJavascript: [pluginResult toSuccessCallbackString:self.callbackID]];
 }
@@ -28,7 +28,7 @@
 //
 -(void) showUI:(NSMutableArray*)arguments withDict:(NSMutableDictionary*)options{
     self.callbackID = [arguments pop];
-    CustomView* view = [[CustomView alloc]initWithFrame:CGRectMake(0.0f, 400.0f, 320.0f, 60.0f)];
+    CustomView* view = [[[CustomView alloc]initWithFrame:CGRectMake(0.0f, 400.0f, 320.0f, 60.0f)] autorelease];
     [self.webView addSubview:view];
 }
 
